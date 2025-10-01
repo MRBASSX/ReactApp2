@@ -7,6 +7,7 @@ import Navbar from './components/Navbar'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Contact from './pages/Contact'
+import PageNotFound from './pages/PageNotFound'
 function App() {
 
 
@@ -19,6 +20,7 @@ function App() {
 
           <Route path='/' element={<Home/>} />
           <Route path='/contact' element={<Contact/>}/>
+          <Route path='*' element={<PageNotFound/>}/>
 
         </Routes>
 
