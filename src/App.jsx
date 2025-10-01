@@ -8,6 +8,9 @@ import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Contact from './pages/Contact'
 import PageNotFound from './pages/PageNotFound'
+import About from './pages/About'
+import Services from './pages/Services'
+import Footer from './components/Footer'
 function App() {
 
 
@@ -21,10 +24,13 @@ function App() {
           <Route path='/' element={<Home/>} />
           <Route path='/contact' element={<Contact/>}/>
           <Route path='*' element={<PageNotFound/>}/>
+          <Route path='/about' element={<About/>} />
+          <Route path='/services' element={<Services/>} />
 
         </Routes>
 
       </Router>
+      <Footer/>
     
     </>
   )
