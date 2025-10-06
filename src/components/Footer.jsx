@@ -10,7 +10,7 @@ const sports = [
 	{ id:6,name: "Golf", icon: "⛳" },
 ];
 
-const Footer = () => {
+const Footer = ({footer}) => {
 	return (
 		<footer className="sports-footer" style={{
 			background: "linear-gradient(90deg, #1e3c72 0%, #2a5298 100%)",

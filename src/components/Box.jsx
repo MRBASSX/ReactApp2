@@ -2,7 +2,18 @@ import { use, useEffect, useState } from "react"
 
  
     
-function Box({sports}) {
+export function Box({sports=[
+	{ id:1,name: "Football", icon: "⚽" },
+	{ id:2,name: "Basketball", icon: "🏀" },
+	{ id:3,name: "Tennis", icon: "🎾" },
+	{ id:4,name: "Cricket", icon: "🏏" },
+	{ id:5,name: "Baseball", icon: "⚾" },
+	{ id:6,name: "Golf", icon: "⛳" },
+] ,MyFunct,bottom = "test"}) {
+
+
+
+    MyFunct("Hi I am Your Function")
 
     return(
         <>
@@ -13,8 +24,8 @@ function Box({sports}) {
                         <img src={sport.image} alt={sport.name}/>
                         <div >
                             <h2 >{sport.name}</h2>
-                            <p  >{sport.description}</p>
-                          
+                            <p  >{sport.icon}</p>
+                          <div className="bottom">{bottom}</div>
                         </div>
                     </div>
                     
@@ -37,4 +48,4 @@ function Box({sports}) {
     
 }
 
-export default Box
+// export default Box
