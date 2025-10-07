@@ -11,6 +11,7 @@ import PageNotFound from './pages/PageNotFound'
 import About from './pages/About'
 import Services from './pages/Services'
 import Footer from './components/Footer'
+import CounterPage from './pages/CounterPage'
 function App() {
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route path='*' element={<PageNotFound/>}/>
           <Route path='/about' element={<About/>} />
           <Route path='/services' element={<Services/>} />
+          <Route path='/count'  element={<CounterPage/>}/>
 
         </Routes>
 
