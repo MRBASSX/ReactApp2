@@ -12,6 +12,7 @@ import About from './pages/About'
 import Services from './pages/Services'
 import Footer from './components/Footer'
 import CounterPage from './pages/CounterPage'
+import RegisterForm from './pages/RegisterForm'
 function App() {
 
 
@@ -28,6 +29,7 @@ function App() {
           <Route path='/about' element={<About/>} />
           <Route path='/services' element={<Services/>} />
           <Route path='/count'  element={<CounterPage/>}/>
+          <Route path='/registerform'  element={<RegisterForm/>}/>
 
         </Routes>
 
