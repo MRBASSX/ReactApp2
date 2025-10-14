@@ -2,6 +2,7 @@ import { useState } from "react"
 import axios from "axios";
 import SubmitButton from "../components/SubmitButton";
 import Input from "../components/Input";
+import LoadingAnimation from "../components/LoadingAnimation";
 
 function RegisterForm() {
 
@@ -11,6 +12,7 @@ function RegisterForm() {
     const [subError ,setSubError] = useState("")
     const [mailError ,setMailError] =useState("")
     const [mError , setMError]=useState("")
+    const [loading,SetLoading] = useState(false);
 
 
 
@@ -19,7 +21,7 @@ function RegisterForm() {
 
 
     const FormHandler = async (event) => {
-
+        SetLoading(true);
         event.preventDefault();
 if( subject == ("")){
 
@@ -41,20 +43,30 @@ if(message==("")){
 
   try {
     
-    const test = await axios.post('/user/', {
-            params: {
-                subject: subject,
-                email:email,
-                message:message
-            }
-        })
+    // const test = await axios.post('/user/', {
+    //         params: {
+    //             subject: subject,
+    //             email:email,
+    //             message:message
+    //         }
+    //     })
         
 
         // console.log(test.statusText)
         
-        if (test.status == 200) {
+        if (200 == 200) {
             
-         alert("Form Submited!!!!");
+            
+            setTimeout(() => {
+
+                 SetLoading(false)
+                 alert("Form Submited!!!!");
+
+            }, 6000);
+
+
+         
+         
 
         }
 
@@ -62,8 +74,12 @@ if(message==("")){
   } catch (error) {
      
     
-    console.log("Catch " + error)
-  }       
+//     console.log("Catch " + error)
+//    setTimeout(() => {
+//       SetLoading(false)
+//    }, 2000);
+  
+  }     
 
 
 
@@ -87,8 +103,9 @@ if(message==("")){
                 <Input type="text" name="subject" id="subject" onChange={(message) => { SetMessage(message.target.value) }} value={message} placeholder="Message" />
 
                  <small style={{color:"red"}}>{message ? "" : mError}</small>
-
+              {loading && <LoadingAnimation />}
               <SubmitButton value="Send"  bg="blue" color="rgba(6, 207, 26, 1)" />
+              
             </form>
            </div>
         </>
