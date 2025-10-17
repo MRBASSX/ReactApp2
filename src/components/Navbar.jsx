@@ -1,4 +1,11 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import LoadingAnimation from "../components/LoadingAnimation";
+import ThhemeContext from '../App'
+
+
+
+
+
 
 const navItems = [
   { name: "Home", link: "/" },
@@ -6,12 +13,32 @@ const navItems = [
   { name: "Fixtures", link: "/fixtures" },
   { name: "Results", link: "/results" },
   { name: "News", link: "/news" },
+  { name: "Help", link: "/help" },
   { name: "Contact", link: "/contact" },
    { name: "Counter", link: "/count" },
    { name: "Register Form", link: "/registerform" },
 ];
 
-const Navbar = () => (
+
+
+
+
+
+const Navbar = () => {
+
+
+  const value = useContext("Qwerty");
+
+ 
+
+  return (
+
+
+
+
+
+
+
   <nav style={{
     background: "linear-gradient(90deg, #0f2027, #2c5364)",
     padding: "0.5rem 2rem",
@@ -56,7 +83,12 @@ const Navbar = () => (
         </li>
       ))}
     </ul>
+
+    {value}
+
+   
   </nav>
 );
+}
 
 export default Navbar;

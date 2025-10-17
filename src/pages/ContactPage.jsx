@@ -4,7 +4,7 @@ import SubmitButton from "../components/SubmitButton";
 import Input from "../components/Input";
 import LoadingAnimation from "../components/LoadingAnimation";
 
-function RegisterForm() {
+function ContactPage() {
 
     const [subject, SetSubject] = useState("");
     const [email, SetEmail] = useState("");
@@ -114,4 +114,4 @@ if(message==("")){
 
 
 
-export default RegisterForm
+export default ContactPage

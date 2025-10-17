@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { createContext, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './static/css/App.css'
@@ -12,13 +12,27 @@ import About from './pages/About'
 import Services from './pages/Services'
 import Footer from './components/Footer'
 import CounterPage from './pages/CounterPage'
-import RegisterForm from './pages/RegisterForm'
+import ContactPage from './pages/ContactPage'
+
+
+const ThhemeContext = createContext("light");
+
 function App() {
+
+
+const [theme,SetTheme] = useState("Dark")
+
 
 
   return (
     <>
-      <Navbar/>
+      {/* <Navbar/> */}
+
+
+      <ThhemeContext.Provider  value={theme}>
+        <Navbar />
+      </ThhemeContext.Provider>
+
       <Router>
 
         <Routes>
@@ -29,7 +43,7 @@ function App() {
           <Route path='/about' element={<About/>} />
           <Route path='/services' element={<Services/>} />
           <Route path='/count'  element={<CounterPage/>}/>
-          <Route path='/registerform'  element={<RegisterForm/>}/>
+          <Route path='/help'  element={<ContactPage/>}/>
 
         </Routes>
 
