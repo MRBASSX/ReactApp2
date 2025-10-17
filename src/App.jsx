@@ -30,7 +30,7 @@ const [theme,SetTheme] = useState("Dark")
 
 
       <ThhemeContext.Provider  value={theme}>
-        <Navbar />
+        <Navbar value={theme} />
       </ThhemeContext.Provider>
 
       <Router>
