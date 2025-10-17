@@ -27,7 +27,7 @@ const navItems = [
 const Navbar = () => {
 
 
-  const value = useContext("Qwerty");
+  const value = useContext(ThhemeContext);
 
  
 
@@ -78,13 +78,13 @@ const Navbar = () => {
             onMouseOver={e => e.currentTarget.style.background = "#1e3c72"}
             onMouseOut={e => e.currentTarget.style.background = "transparent"}
           >
-            {item.name}
+            {item.name} 
           </a>
         </li>
       ))}
     </ul>
 
-    {value}
+   
 
    
   </nav>
