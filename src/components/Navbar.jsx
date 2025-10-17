@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import LoadingAnimation from "../components/LoadingAnimation";
-import ThhemeContext from '../App'
+import ThemeContext from '../App'
 
 
 
@@ -27,7 +27,7 @@ const navItems = [
 const Navbar = () => {
 
 
-  const value = useContext(ThhemeContext);
+  const value = useContext(ThemeContext);
 
  
 
@@ -78,7 +78,7 @@ const Navbar = () => {
             onMouseOver={e => e.currentTarget.style.background = "#1e3c72"}
             onMouseOut={e => e.currentTarget.style.background = "transparent"}
           >
-            {item.name} 
+            {item.name + value} 
           </a>
         </li>
       ))}

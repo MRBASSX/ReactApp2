@@ -14,10 +14,11 @@ import Footer from './components/Footer'
 import CounterPage from './pages/CounterPage'
 import ContactPage from './pages/ContactPage'
 
+  const ThemeContext = createContext("light");
 
-const ThhemeContext = createContext("light");
 
 function App() {
+
 
 
 const [theme,SetTheme] = useState("Dark")
@@ -29,9 +30,9 @@ const [theme,SetTheme] = useState("Dark")
       {/* <Navbar/> */}
 
 
-      <ThhemeContext.Provider  value={theme}>
-        <Navbar theme={theme} />
-      </ThhemeContext.Provider>
+      <ThemeContext.Provider  value={theme}>
+        <Navbar value={theme} />
+      </ThemeContext.Provider>
 
       <Router>
 
