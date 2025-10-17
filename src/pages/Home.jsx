@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import {Box} from "../components/Box";
-import NavBar  from  "../components/Navbar"
+
 
 
 
@@ -55,7 +55,7 @@ const MyF = (ttt)=>{
             </header>
 
            <Box   MyFunct={MyF} bottom = {"test2"}/>
-           <NavBar/>
+          
             
         </div>
     );
