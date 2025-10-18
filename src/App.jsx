@@ -14,7 +14,7 @@ import Footer from './components/Footer'
 import CounterPage from './pages/CounterPage'
 import ContactPage from './pages/ContactPage'
 
-  const ThemeContext = createContext("light");
+ export const ThemeContext = createContext("light");
 
 
 function App() {
@@ -27,11 +27,11 @@ const [theme,SetTheme] = useState("Dark")
 
   return (
     <>
-      {/* <Navbar/> */}
+      <Navbar/>
 
 
-      <ThemeContext.Provider  value={theme}>
-        <Navbar value={theme} />
+      <ThemeContext.Provider  value={"theme"}>
+        <Navbar value={"theme"} />
       </ThemeContext.Provider>
 
       <Router>
