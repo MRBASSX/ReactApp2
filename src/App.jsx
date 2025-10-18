@@ -27,7 +27,7 @@ const [theme,SetTheme] = useState("Dark")
 
   return (
     <>
-      <Navbar/>
+      {/* <Navbar/> */}
 
 
       <ThemeContext.Provider  value={"theme"}>
