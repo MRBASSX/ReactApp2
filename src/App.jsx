@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './static/css/App.css'
@@ -14,25 +14,21 @@ import Footer from './components/Footer'
 import CounterPage from './pages/CounterPage'
 import ContactPage from './pages/ContactPage'
 
- export const ThemeContext = createContext("light");
+
 
 
 function App() {
 
 
 
-const [theme,SetTheme] = useState("Dark")
-
 
 
   return (
     <>
-      {/* <Navbar/> */}
+      <Navbar/>
 
 
-      <ThemeContext.Provider  value={"theme"}>
-        <Navbar value={"theme"} />
-      </ThemeContext.Provider>
+
 
       <Router>
 

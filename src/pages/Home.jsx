@@ -1,5 +1,6 @@
-import React, { useContext, useState } from "react";
-import {Box} from "../components/Box";
+import { createContext, useState } from 'react'
+import { Box } from "../components/Box";
+import Navbar from '../components/Navbar';
 
 
 
@@ -30,21 +31,26 @@ const Shirt = [
         description: "Join the running community, track events, and training tips.",
     },
 ];
+
+ export const ThemeContext = createContext("light");
+
 export default function Home() {
 
 
-  
 
 
-const MyF = (ttt)=>{
-    
-    
-  if (true) {
-      console.log(ttt)
-  }
+const [theme,SetTheme] = useState("Dark")
 
 
-}
+    const MyF = (ttt) => {
+
+
+        if (true) {
+            console.log(ttt)
+        }
+
+
+    }
 
 
 
@@ -52,16 +58,20 @@ const MyF = (ttt)=>{
 
     return (
 
-        
+
         <div style={{ fontFamily: "Arial, sans-serif", background: "#f5f6fa", minHeight: "100vh" }}>
             <header style={{ padding: "2rem 0", textAlign: "center", background: "#273c75", color: "#fff" }}>
                 <h1>Sports Hub </h1>
                 <p>Discover your favorite sports, latest news, and upcoming events!</p>
             </header>
 
-           <Box   MyFunct={MyF} bottom = {"test2"}/>
-          
-            
+            <Box MyFunct={MyF} bottom={"test2"} />
+
+            <ThemeContext.Provider value={theme}>
+                <Navbar theme={theme} />
+            </ThemeContext.Provider>
+
+
         </div>
     );
 }
