@@ -1,7 +1,6 @@
-import { createContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import { Box } from "../components/Box";
-import Navbar from '../components/Navbar';
-
+import { ThemeContext } from '../App.jsx';
 
 
 
@@ -32,15 +31,13 @@ const Shirt = [
     },
 ];
 
- export const ThemeContext = createContext("light");
+
 
 export default function Home() {
 
 
 
-
-const [theme,SetTheme] = useState("Dark")
-
+    const theme = useContext(ThemeContext);
 
     const MyF = (ttt) => {
 
@@ -61,15 +58,13 @@ const [theme,SetTheme] = useState("Dark")
 
         <div style={{ fontFamily: "Arial, sans-serif", background: "#f5f6fa", minHeight: "100vh" }}>
             <header style={{ padding: "2rem 0", textAlign: "center", background: "#273c75", color: "#fff" }}>
-                <h1>Sports Hub </h1>
+                <h1>Sports Hub {theme}</h1>
                 <p>Discover your favorite sports, latest news, and upcoming events!</p>
             </header>
 
             <Box MyFunct={MyF} bottom={"test2"} />
 
-            <ThemeContext.Provider value={theme}>
-                <Navbar theme={theme} />
-            </ThemeContext.Provider>
+            
 
 
         </div>

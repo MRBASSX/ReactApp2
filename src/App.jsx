@@ -1,10 +1,10 @@
-
+import React, { createContext, useContext, useState } from "react";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './static/css/App.css'
-import {SendButton1} from './components/SendButton'
+import { SendButton1 } from './components/SendButton'
 import Navbar from './components/Navbar'
-import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Contact from './pages/Contact'
 import PageNotFound from './pages/PageNotFound'
@@ -15,7 +15,7 @@ import CounterPage from './pages/CounterPage'
 import ContactPage from './pages/ContactPage'
 
 
-
+export const ThemeContext = createContext("light");
 
 function App() {
 
@@ -25,28 +25,30 @@ function App() {
 
   return (
     <>
-      <Navbar/>
 
 
 
+      <ThemeContext.Provider value={"Black"}>
+        <Navbar />
 
-      <Router>
 
-        <Routes>
+        <Router>
 
-          <Route path='/' element={<Home/>} />
-          <Route path='/contact' element={<Contact/>}/>
-          <Route path='*' element={<PageNotFound/>}/>
-          <Route path='/about' element={<About/>} />
-          <Route path='/services' element={<Services/>} />
-          <Route path='/count'  element={<CounterPage/>}/>
-          <Route path='/help'  element={<ContactPage/>}/>
+          <Routes>
 
-        </Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='*' element={<PageNotFound />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/services' element={<Services />} />
+            <Route path='/count' element={<CounterPage />} />
+            <Route path='/help' element={<ContactPage />} />
 
-      </Router>
-      <Footer/>
-    
+          </Routes>
+
+        </Router>
+        <Footer />
+      </ThemeContext.Provider>
     </>
   )
 }
