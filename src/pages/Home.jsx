@@ -1,6 +1,9 @@
 import { useContext, useState } from 'react'
 import { Box } from "../components/Box";
 import { ThemeContext } from '../App.jsx';
+import { UserContext } from '../App.jsx';
+import { DashboardContext } from '../App.jsx';
+
 
 
 
@@ -36,34 +39,53 @@ const Shirt = [
 export default function Home() {
 
 
+    const {User,toggleTheme} = useContext(UserContext);
 
     const theme = useContext(ThemeContext);
+
+    const dash = useContext(DashboardContext);
 
     const MyF = (ttt) => {
 
 
-        if (true) {
-            console.log(ttt)
-        }
-
+       return(
+        Info.map((out)=>(
+        <div key={out.id}>
+            <h1>hello{out.name}</h1>
+        </div>
+    ))
+       )
 
     }
 
+    const Info = [
+        
+        {
+            name:"Dan",
+            id:2
+        },
+        {
+            name:"James",
+            id:3
+        },
 
+    ]
 
-
+   
 
     return (
 
 
-        <div style={{ fontFamily: "Arial, sans-serif", background: "#f5f6fa", minHeight: "100vh" }}>
+        <div style={{ fontFamily: "Arial, sans-serif", background: User == 'light' ? '#fff':'#333', minHeight: "100vh" }}>
             <header style={{ padding: "2rem 0", textAlign: "center", background: "#273c75", color: "#fff" }}>
                 <h1 >Sports Hub {theme}</h1>
                 <p>Discover your favorite sports, latest news, and upcoming events!</p>
             </header>
-
+            <h1><MyF/></h1>
             <Box MyFunct={MyF} bottom={"test2"} />
-
+            <h1>Username:{User}</h1>
+            <button onClick={toggleTheme}>Swap</button>
+            <h1>Name:{dash}</h1>
             
 
 

@@ -15,20 +15,34 @@ import CounterPage from './pages/CounterPage'
 import ContactPage from './pages/ContactPage'
 
 
+export const UserContext = createContext();
 export const ThemeContext = createContext("light");
+export const DashboardContext = createContext();
+export const PriceContext =createContext();
 
 function App() {
 
+
+
+
 const [theme ,setTheme] = useState("Dark")
+const [User,SetUser] = useState("light");
+const [dash,setdash] =useState("George");
+const [Price,setprice]=useState("20000000")
 
-
+ const toggleTheme = () => {
+    SetUser(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
 
   return (
 
     
     <>
+  <PriceContext value={Price}>
+    <DashboardContext value={dash} >
+    
 
-
+      <UserContext value={{User,toggleTheme}}>
 
       <ThemeContext value={theme}>
         <Navbar  />
@@ -51,6 +65,10 @@ const [theme ,setTheme] = useState("Dark")
         </Router>
         <Footer />
       </ThemeContext>
+      </UserContext>
+        </DashboardContext>
+        </PriceContext>
+
     </>
   )
 }
