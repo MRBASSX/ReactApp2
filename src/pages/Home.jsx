@@ -58,7 +58,7 @@ export default function Home() {
 
         <div style={{ fontFamily: "Arial, sans-serif", background: "#f5f6fa", minHeight: "100vh" }}>
             <header style={{ padding: "2rem 0", textAlign: "center", background: "#273c75", color: "#fff" }}>
-                <h1>Sports Hub {theme}</h1>
+                <h1 >Sports Hub {theme}</h1>
                 <p>Discover your favorite sports, latest news, and upcoming events!</p>
             </header>
 

@@ -19,17 +19,19 @@ export const ThemeContext = createContext("light");
 
 function App() {
 
-
+const [theme ,setTheme] = useState("Dark")
 
 
 
   return (
+
+    
     <>
 
 
 
-      <ThemeContext.Provider value={"Black"}>
-        <Navbar />
+      <ThemeContext value={theme}>
+        <Navbar  />
 
 
         <Router>
@@ -48,7 +50,7 @@ function App() {
 
         </Router>
         <Footer />
-      </ThemeContext.Provider>
+      </ThemeContext>
     </>
   )
 }
