@@ -31,6 +31,7 @@ const [dash,setdash] =useState("George");
 const [Price,setprice]=useState("20000000")
 
  const toggleTheme = () => {
+  
     SetUser(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
