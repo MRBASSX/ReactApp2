@@ -19,6 +19,7 @@ export const UserContext = createContext();
 export const ThemeContext = createContext("light");
 export const DashboardContext = createContext();
 export const PriceContext =createContext();
+export const ColorContext = createContext();
 
 function App() {
 
@@ -28,10 +29,11 @@ function App() {
 const [theme ,setTheme] = useState("Dark")
 const [User,SetUser] = useState("light");
 const [dash,setdash] =useState("George");
-const [Price,setprice]=useState("20000000")
+const [Price,setprice]=useState("20000000");
+const [Color,SetColor] = useState("Blue");
 
  const toggleTheme = () => {
-  
+
     SetUser(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
@@ -39,6 +41,7 @@ const [Price,setprice]=useState("20000000")
 
     
     <>
+    <ColorContext.Provider value={Color}>
   <PriceContext value={Price}>
     <DashboardContext value={dash} >
     
@@ -70,6 +73,7 @@ const [Price,setprice]=useState("20000000")
         </DashboardContext>
         </PriceContext>
 
+    </ColorContext.Provider>
     </>
   )
 }

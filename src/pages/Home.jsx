@@ -3,6 +3,7 @@ import { Box } from "../components/Box";
 import { ThemeContext } from '../App.jsx';
 import { UserContext } from '../App.jsx';
 import { DashboardContext } from '../App.jsx';
+import { ColorContext } from '../App.jsx';
 
 
 
@@ -45,6 +46,8 @@ export default function Home() {
 
     const dash = useContext(DashboardContext);
 
+    const Color = useContext(ColorContext);
+
     const MyF = (ttt) => {
 
 
@@ -81,11 +84,12 @@ export default function Home() {
                 <h1 >Sports Hub {theme}</h1>
                 <p>Discover your favorite sports, latest news, and upcoming events!</p>
             </header>
-            <h1><MyF/></h1>
+            <h1><MyF/></h1><img />
             <Box MyFunct={MyF} bottom={"test2"} />
             <h1>Username:{User}</h1>
             <button onClick={toggleTheme}>Swap</button>
             <h1>Name:{dash}</h1>
+            <h1>Color:{Color}</h1>
             
 
 
